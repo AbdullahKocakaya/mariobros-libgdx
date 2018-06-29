@@ -14,6 +14,7 @@ public class ImageLoader {
 
         //                                   image - render place  -  how much gonna cut
         backgroundRegion = new TextureRegion(texture,0,0,256,256);
+        Gdx.app.log("Image", "Background loaded");
     }
 
     public static void dispose() {
