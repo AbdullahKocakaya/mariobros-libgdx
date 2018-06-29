@@ -3,7 +3,7 @@ package com.akocakaya.supermario.client;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.gwt.GwtApplication;
 import com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration;
-import com.akocakaya.supermario.SuperMario;
+import com.akocakaya.supermario.supermario.SuperMario;
 
 public class HtmlLauncher extends GwtApplication {
 
