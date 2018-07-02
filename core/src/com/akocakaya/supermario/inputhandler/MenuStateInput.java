@@ -1,6 +1,7 @@
 package com.akocakaya.supermario.inputhandler;
 
 import com.akocakaya.supermario.states.MenuState;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 
@@ -35,6 +36,8 @@ public class MenuStateInput implements InputProcessor {
             default:
                 break;
         }
+
+        Gdx.app.log("Position", " " + menuState.getxCord() + " ," + menuState.getyCord());
 
         return false;
     }
