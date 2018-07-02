@@ -8,5 +8,9 @@ public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		new LwjglApplication(new SuperMario(), config);
+
+		config.title = SuperMario.TITLE;
+		config.width = SuperMario.WIDTH;
+		config.height = SuperMario.HEIGHT;
 	}
 }

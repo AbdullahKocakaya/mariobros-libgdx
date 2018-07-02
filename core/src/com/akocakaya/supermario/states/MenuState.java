@@ -16,8 +16,8 @@ public class MenuState extends State {
 
     private Stage stage;
 
-    private float yCord = 252;
-    private float xCord = 58;
+    private float yCord = 312;
+    private float xCord = 117;
 
     public MenuState(StateManager stateManager) {
         super(stateManager);
@@ -26,8 +26,6 @@ public class MenuState extends State {
         Viewport viewport = new ScreenViewport(camera);
         camera.setToOrtho(false);       //flip
         stage = new Stage(viewport);
-
-        StateManager stateManager1 = stateManager;
 
         Gdx.input.setInputProcessor(new MenuStateInput(this));
 

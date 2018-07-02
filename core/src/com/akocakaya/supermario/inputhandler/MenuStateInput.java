@@ -23,10 +23,10 @@ public class MenuStateInput implements InputProcessor {
                 menuState.setyCord(menuState.getyCord() - 29);
                 break;
             case Input.Keys.A:
-                menuState.setxCord(menuState.getxCord() - 213);
+                menuState.setxCord(menuState.getxCord() - 333);
                 break;
             case Input.Keys.D:
-                menuState.setxCord(menuState.getxCord() + 213);
+                menuState.setxCord(menuState.getxCord() + 333);
                 break;
             default:
                 break;
