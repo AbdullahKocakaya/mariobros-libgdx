@@ -17,16 +17,20 @@ public class MenuStateInput implements InputProcessor {
 
         switch (keycode) {
             case Input.Keys.W:
-                menuState.setyCord(menuState.getyCord() + 29);
+                if (menuState.getyCord() < 300)
+                    menuState.setyCord(menuState.getyCord() + 29);
                 break;
             case Input.Keys.S:
-                menuState.setyCord(menuState.getyCord() - 29);
+                if (menuState.getyCord() > 290)
+                    menuState.setyCord(menuState.getyCord() - 29);
                 break;
             case Input.Keys.A:
-                menuState.setxCord(menuState.getxCord() - 333);
+                if (menuState.getxCord() > 200)
+                    menuState.setxCord(menuState.getxCord() - 333);
                 break;
             case Input.Keys.D:
-                menuState.setxCord(menuState.getxCord() + 333);
+                if (menuState.getxCord() < 600)
+                    menuState.setxCord(menuState.getxCord() + 333);
                 break;
             default:
                 break;
