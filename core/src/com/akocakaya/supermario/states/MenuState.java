@@ -14,26 +14,20 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class MenuState extends State {
 
-    public Stage stage;
-    private Viewport viewport;
-    private StateManager stateManager;
+    private Stage stage;
 
-    public void setAsd(boolean asd) {
-        this.asd = asd;
-    }
-
-    private boolean asd = false;
-    private float yCord;
+    private float yCord = 252;
+    private float xCord = 58;
 
     public MenuState(StateManager stateManager) {
         super(stateManager);
 
 
-        viewport = new ScreenViewport(camera);
+        Viewport viewport = new ScreenViewport(camera);
         camera.setToOrtho(false);       //flip
         stage = new Stage(viewport);
 
-        this.stateManager = stateManager;
+        StateManager stateManager1 = stateManager;
 
         Gdx.input.setInputProcessor(new MenuStateInput(this));
 
@@ -56,32 +50,49 @@ public class MenuState extends State {
         Label label5 = new Label(stage5, font);
         Label label6 = new Label(stage6, font);
 
-        table.add(label1).expandX().padBottom(10);
-        table.add(label2).expandX().padBottom(10);
-        table.add(label3).expandX().padBottom(10);
+        label1.getFontScaleX();
+
+        table.padBottom(10);
+
+        table.add(label1).expandX().padBottom(5);
+        table.add(label2).expandX().padBottom(5);
+        table.add(label3).expandX().padBottom(5);
         table.row();
-        table.add(label4).expandX();
-        table.add(label5).expandX();
-        table.add(label6).expandX();
+        table.add(label4).expandX().padTop(5);
+        table.add(label5).expandX().padTop(5);
+        table.add(label6).expandX().padTop(5);
 
         stage.addActor(table);
+
+        Gdx.app.log("Table", "Stages written");
     }
 
     @Override
     public void render(SpriteBatch spriteBatch) {
         spriteBatch.begin();
-        spriteBatch.draw(ImageLoader.backgroundRegion, 0, yCord, 100, 100);
+        spriteBatch.draw(ImageLoader.stagePointerRegion, xCord, yCord, 15, 15);
         spriteBatch.end();
         stage.draw();
     }
 
     @Override
     public void update(float delta) {
-        move();
+
     }
 
-    public void move() {
-        if (asd)
-            yCord += 2;
+    public void setyCord(float yCord) {
+        this.yCord = yCord;
+    }
+
+    public void setxCord(float xCord) {
+        this.xCord = xCord;
+    }
+
+    public float getyCord() {
+        return yCord;
+    }
+
+    public float getxCord() {
+        return xCord;
     }
 }

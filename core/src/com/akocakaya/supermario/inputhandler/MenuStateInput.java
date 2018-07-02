@@ -6,7 +6,7 @@ import com.badlogic.gdx.InputProcessor;
 
 public class MenuStateInput implements InputProcessor {
 
-    MenuState menuState;
+    private MenuState menuState;
 
     public MenuStateInput(MenuState menuState) {
         this.menuState = menuState;
@@ -16,8 +16,17 @@ public class MenuStateInput implements InputProcessor {
     public boolean keyDown(int keycode) {
 
         switch (keycode) {
+            case Input.Keys.W:
+                menuState.setyCord(menuState.getyCord() + 29);
+                break;
+            case Input.Keys.S:
+                menuState.setyCord(menuState.getyCord() - 29);
+                break;
             case Input.Keys.A:
-                menuState.setAsd(true);
+                menuState.setxCord(menuState.getxCord() - 213);
+                break;
+            case Input.Keys.D:
+                menuState.setxCord(menuState.getxCord() + 213);
                 break;
             default:
                 break;
@@ -28,15 +37,6 @@ public class MenuStateInput implements InputProcessor {
 
     @Override
     public boolean keyUp(int keycode) {
-
-        switch (keycode) {
-            case Input.Keys.A:
-                menuState.setAsd(false);
-                break;
-            default:
-                break;
-        }
-
         return false;
     }
 
