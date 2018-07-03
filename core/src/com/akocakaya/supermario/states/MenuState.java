@@ -11,6 +11,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class MenuState extends State {
 
+    private StateManager stateManager;
     private Stage stage;
 
     private float yCord = 307;
@@ -19,6 +20,7 @@ public class MenuState extends State {
     public MenuState(StateManager stateManager) {
         super(stateManager);
 
+        this.stateManager = stateManager;
 
         Viewport viewport = new ScreenViewport(camera);
         camera.setToOrtho(false);       //flip
@@ -60,5 +62,9 @@ public class MenuState extends State {
 
     public float getxCord() {
         return xCord;
+    }
+
+    public StateManager getStateManager() {
+        return stateManager;
     }
 }

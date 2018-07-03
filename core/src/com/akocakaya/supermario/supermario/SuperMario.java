@@ -14,9 +14,10 @@ public class SuperMario extends ApplicationAdapter {
     public static int HEIGHT = 600;
     public static String TITLE = "Super Mario Bros";
 
+    private static StateManager stateManager;
+
     private SpriteBatch spriteBatch;
 
-    private static StateManager stateManager;
 
     @Override
     public void create() {

@@ -13,11 +13,11 @@ public class ImageLoader {
         texture = new Texture(Gdx.files.internal("badlogic.jpg"));
         stagePointerTexture = new Texture(Gdx.files.internal("stage-pointer.png"));
 
-        stagePointerRegion = new TextureRegion(stagePointerTexture,0,0,1000,1000);
+        stagePointerRegion = new TextureRegion(stagePointerTexture, 0, 0, 1000, 1000);
         Gdx.app.log("Image", "Stage Pointer loaded");
 
         //                                   image - render place  -  how much gonna cut
-        backgroundRegion = new TextureRegion(texture,0,0,256,256);
+        backgroundRegion = new TextureRegion(texture, 0, 0, 256, 256);
         Gdx.app.log("Image", "Background loaded");
     }
 

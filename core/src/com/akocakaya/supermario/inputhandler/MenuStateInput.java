@@ -1,9 +1,11 @@
 package com.akocakaya.supermario.inputhandler;
 
 import com.akocakaya.supermario.states.MenuState;
+import com.akocakaya.supermario.states.StageState;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
+
+import static com.badlogic.gdx.Input.Keys.*;
 
 public class MenuStateInput implements InputProcessor {
 
@@ -17,22 +19,25 @@ public class MenuStateInput implements InputProcessor {
     public boolean keyDown(int keycode) {
 
         switch (keycode) {
-            case Input.Keys.W:
+            case W:
                 if (menuState.getyCord() < 300)
                     menuState.setyCord(menuState.getyCord() + 24);
                 break;
-            case Input.Keys.S:
+            case S:
                 if (menuState.getyCord() > 290)
                     menuState.setyCord(menuState.getyCord() - 24);
                 break;
-            case Input.Keys.A:
+            case A:
                 if (menuState.getxCord() > 200)
                     menuState.setxCord(menuState.getxCord() - 333);
                 break;
-            case Input.Keys.D:
+            case D:
                 if (menuState.getxCord() < 600)
                     menuState.setxCord(menuState.getxCord() + 333);
                 break;
+            case ENTER:
+                if (menuState.getxCord() == 117.0 && menuState.getyCord() == 307.0)
+                    menuState.getStateManager().pushState(new StageState(menuState.getStateManager()));
             default:
                 break;
         }
