@@ -10,29 +10,40 @@ import com.badlogic.gdx.physics.box2d.*;
 
 public class WorldCreator {
 
-    public WorldCreator(GameWorld gameWorld) {
-        World world = gameWorld.getWorld();
-        TiledMap tiledMap = gameWorld.getMap().getTiledMap();
-        BodyDef bodyDef = new BodyDef();
-        PolygonShape polygonShape = new PolygonShape();
-        FixtureDef fixtureDef = new FixtureDef();
-        Body body;
+    private TiledMap tiledMap;
+    private BodyDef bodyDef;
+    private Body body;
+    private World world;
+    private PolygonShape polygonShape;
+    private FixtureDef fixtureDef;
 
-        for (MapObject object : tiledMap.getLayers().get(2).getObjects().getByType(RectangleMapObject.class)) {
+    public WorldCreator(GameWorld gameWorld) {
+        world = gameWorld.getWorld();
+        tiledMap = gameWorld.getMap().getTiledMap();
+        bodyDef = new BodyDef();
+        polygonShape = new PolygonShape();
+        fixtureDef = new FixtureDef();
+
+        builder(2);
+        builder(3);
+
+        for (MapObject object : tiledMap.getLayers().get(5).getObjects().getByType(RectangleMapObject.class)) {
+            new Brick(gameWorld, object);
+        }
+    }
+
+    private void builder(int index) {
+        for (MapObject object : tiledMap.getLayers().get(index).getObjects().getByType(RectangleMapObject.class)) {
             Rectangle rectangle = ((RectangleMapObject) object).getRectangle();
 
             bodyDef.type = BodyDef.BodyType.StaticBody;
-            bodyDef.position.set((rectangle.getX() + rectangle.getWidth() / 2), (rectangle.getY() + rectangle.getHeight()) / 2);
+            bodyDef.position.set((rectangle.getX() + rectangle.getWidth() / 2), (rectangle.getY() + rectangle.getHeight() / 2));
 
             body = world.createBody(bodyDef);
 
             polygonShape.setAsBox((rectangle.getWidth() / 2), (rectangle.getHeight() / 2));
             fixtureDef.shape = polygonShape;
             body.createFixture(fixtureDef);
-        }
-
-        for (MapObject object : tiledMap.getLayers().get(5).getObjects().getByType(RectangleMapObject.class)) {
-            new Brick(gameWorld, object);
         }
     }
 }

@@ -34,7 +34,7 @@ public class StageState extends State {
         camera.update();
         gameWorld.update(delta);
         gameWorld.getRenderer().setView(camera);
-        //camera.position.x += 1;
+        camera.position.x += 1;
     }
 
     public StateManager getStateManager() {
