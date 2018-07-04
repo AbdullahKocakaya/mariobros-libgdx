@@ -1,6 +1,6 @@
 package com.akocakaya.supermario.supermario;
 
-import com.akocakaya.supermario.ImageLoader.ImageLoader;
+import com.akocakaya.supermario.ImageLoader.TextureLoader;
 import com.akocakaya.supermario.states.MenuState;
 import com.akocakaya.supermario.states.StateManager;
 import com.badlogic.gdx.ApplicationAdapter;
@@ -23,7 +23,7 @@ public class SuperMario extends ApplicationAdapter {
     public void create() {
         Gdx.gl.glClearColor(0, 0, 0, 1);
 
-        ImageLoader.load();
+        TextureLoader.load();
 
         spriteBatch = new SpriteBatch();
 
@@ -42,7 +42,7 @@ public class SuperMario extends ApplicationAdapter {
 
     @Override
     public void dispose() {
-        ImageLoader.dispose();
+        TextureLoader.dispose();
 
         Gdx.app.log("Game", "Dispose");
     }

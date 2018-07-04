@@ -1,6 +1,6 @@
 package com.akocakaya.supermario.states;
 
-import com.akocakaya.supermario.ImageLoader.ImageLoader;
+import com.akocakaya.supermario.ImageLoader.TextureLoader;
 import com.akocakaya.supermario.inputhandler.MenuStateInput;
 import com.akocakaya.supermario.stageobject.TableWriter;
 import com.badlogic.gdx.Gdx;
@@ -38,7 +38,7 @@ public class MenuState extends State {
     @Override
     public void render(SpriteBatch spriteBatch) {
         spriteBatch.begin();
-        spriteBatch.draw(ImageLoader.stagePointerRegion, xCord, yCord, 15, 15);
+        spriteBatch.draw(TextureLoader.stagePointerRegion, xCord, yCord, 15, 15);
         spriteBatch.end();
         stage.draw();
     }
