@@ -4,12 +4,8 @@ import com.akocakaya.supermario.GameObject.GameWorld;
 import com.akocakaya.supermario.inputhandler.StageStateInput;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.viewport.FitViewport;
-import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class StageState extends State {
-
-    private Viewport viewport;
 
     private StateManager stateManager;
     private GameWorld gameWorld;
@@ -19,7 +15,6 @@ public class StageState extends State {
 
         this.stateManager = stateManager;
 
-        viewport = new FitViewport(10, 10, camera);
         camera.zoom = 0.34f;
 
         camera.setToOrtho(false);
@@ -31,6 +26,7 @@ public class StageState extends State {
     @Override
     public void render(SpriteBatch spriteBatch) {
         gameWorld.render(spriteBatch);
+        gameWorld.getBox2DDebugRenderer().render(gameWorld.getWorld(), camera.combined);
     }
 
     @Override
@@ -38,8 +34,7 @@ public class StageState extends State {
         camera.update();
         gameWorld.update(delta);
         gameWorld.getRenderer().setView(camera);
-        camera.position.x += 2;
-
+        //camera.position.x += 1;
     }
 
     public StateManager getStateManager() {

@@ -9,10 +9,11 @@ import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 public class Map implements GameObject {
 
     private OrthogonalTiledMapRenderer renderer;
+    private TiledMap tiledMap;
 
     public Map() {
         TmxMapLoader mapLoader = new TmxMapLoader();
-        TiledMap tiledMap = mapLoader.load("level1.tmx");
+        tiledMap = mapLoader.load("level1.tmx");
         renderer = new OrthogonalTiledMapRenderer(tiledMap);
     }
 
@@ -33,5 +34,9 @@ public class Map implements GameObject {
 
     public OrthogonalTiledMapRenderer getRenderer() {
         return renderer;
+    }
+
+    public TiledMap getTiledMap() {
+        return tiledMap;
     }
 }
