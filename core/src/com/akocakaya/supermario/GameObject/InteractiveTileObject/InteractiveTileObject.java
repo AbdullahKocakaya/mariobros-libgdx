@@ -1,4 +1,4 @@
-package com.akocakaya.supermario.GameObject.TileObject;
+package com.akocakaya.supermario.GameObject.InteractiveTileObject;
 
 import com.akocakaya.supermario.GameObject.GameWorld;
 import com.badlogic.gdx.maps.MapObject;
