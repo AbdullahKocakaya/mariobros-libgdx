@@ -1,5 +1,6 @@
 package com.akocakaya.supermario.GameObject.Tools;
 
+import com.akocakaya.supermario.GameObject.Enemy.Goomba;
 import com.akocakaya.supermario.GameObject.GameWorld;
 import com.akocakaya.supermario.GameObject.TileObject.Brick;
 import com.akocakaya.supermario.GameObject.TileObject.Coin;
@@ -25,15 +26,27 @@ public class WorldCreator {
         polygonShape = new PolygonShape();
         fixtureDef = new FixtureDef();
 
+        //for ground
         builder(2);
+
+        //for pipes
         builder(3);
 
+        //for coins
+        for (MapObject object : tiledMap.getLayers().get(4).getObjects().getByType(RectangleMapObject.class)) {
+            new Coin(gameWorld, object);
+        }
+
+        //for bricks
         for (MapObject object : tiledMap.getLayers().get(5).getObjects().getByType(RectangleMapObject.class)) {
             new Brick(gameWorld, object);
         }
 
-        for (MapObject object : tiledMap.getLayers().get(4).getObjects().getByType(RectangleMapObject.class)) {
-            new Coin(gameWorld, object);
+        //for goombas
+        for (MapObject object : tiledMap.getLayers().get(6).getObjects().getByType(RectangleMapObject.class)) {
+            Rectangle rectangle = ((RectangleMapObject) object).getRectangle();
+
+            new Goomba(gameWorld, rectangle.getX(), rectangle.getY() + 7);
         }
     }
 
