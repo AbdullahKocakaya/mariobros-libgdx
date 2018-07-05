@@ -1,6 +1,6 @@
 package com.akocakaya.supermario.states;
 
-import com.akocakaya.supermario.GameObject.GameWorld;
+import com.akocakaya.supermario.gameObject.GameWorld;
 import com.akocakaya.supermario.inputhandler.StageStateInput;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;

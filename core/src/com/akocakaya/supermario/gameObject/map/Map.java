@@ -1,6 +1,6 @@
-package com.akocakaya.supermario.GameObject.Map;
+package com.akocakaya.supermario.gameObject.map;
 
-import com.akocakaya.supermario.GameObject.GameObject;
+import com.akocakaya.supermario.gameObject.GameObject;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;

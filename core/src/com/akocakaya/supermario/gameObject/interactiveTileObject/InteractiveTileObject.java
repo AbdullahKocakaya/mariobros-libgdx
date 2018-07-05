@@ -1,6 +1,6 @@
-package com.akocakaya.supermario.GameObject.InteractiveTileObject;
+package com.akocakaya.supermario.gameObject.interactiveTileObject;
 
-import com.akocakaya.supermario.GameObject.GameWorld;
+import com.akocakaya.supermario.gameObject.GameWorld;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;

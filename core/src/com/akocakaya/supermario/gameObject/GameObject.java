@@ -1,4 +1,4 @@
-package com.akocakaya.supermario.GameObject;
+package com.akocakaya.supermario.gameObject;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 

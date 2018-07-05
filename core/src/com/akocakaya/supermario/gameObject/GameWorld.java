@@ -1,7 +1,7 @@
-package com.akocakaya.supermario.GameObject;
+package com.akocakaya.supermario.gameObject;
 
-import com.akocakaya.supermario.GameObject.Map.Map;
-import com.akocakaya.supermario.GameObject.Tools.WorldCreator;
+import com.akocakaya.supermario.gameObject.map.Map;
+import com.akocakaya.supermario.gameObject.tools.WorldCreator;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Vector2;

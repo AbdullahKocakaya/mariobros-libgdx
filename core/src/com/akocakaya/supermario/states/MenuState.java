@@ -1,6 +1,6 @@
 package com.akocakaya.supermario.states;
 
-import com.akocakaya.supermario.ImageLoader.TextureLoader;
+import com.akocakaya.supermario.imageLoader.TextureLoader;
 import com.akocakaya.supermario.inputhandler.MenuStateInput;
 import com.akocakaya.supermario.stageobject.TableWriter;
 import com.badlogic.gdx.Gdx;

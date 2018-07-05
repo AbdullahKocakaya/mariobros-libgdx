@@ -1,4 +1,4 @@
-package com.akocakaya.supermario.ImageLoader;
+package com.akocakaya.supermario.imageLoader;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;

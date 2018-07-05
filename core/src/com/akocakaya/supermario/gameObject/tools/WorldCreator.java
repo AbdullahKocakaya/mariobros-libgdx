@@ -1,10 +1,10 @@
-package com.akocakaya.supermario.GameObject.Tools;
+package com.akocakaya.supermario.gameObject.tools;
 
-import com.akocakaya.supermario.GameObject.Enemy.Goomba;
-import com.akocakaya.supermario.GameObject.Enemy.Turtle;
-import com.akocakaya.supermario.GameObject.GameWorld;
-import com.akocakaya.supermario.GameObject.InteractiveTileObject.Brick;
-import com.akocakaya.supermario.GameObject.InteractiveTileObject.Coin;
+import com.akocakaya.supermario.gameObject.enemy.Goomba;
+import com.akocakaya.supermario.gameObject.enemy.Turtle;
+import com.akocakaya.supermario.gameObject.GameWorld;
+import com.akocakaya.supermario.gameObject.interactiveTileObject.Brick;
+import com.akocakaya.supermario.gameObject.interactiveTileObject.Coin;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
@@ -80,7 +80,7 @@ public class WorldCreator {
 
             new Goomba(gameWorld, rectangle.getX(), rectangle.getY() + 7);
         }
-        Gdx.app.log("Enemy","Goombas created");
+        Gdx.app.log("enemy","Goombas created");
 
         //for turtles
         for (MapObject object : tiledMap.getLayers().get(7).getObjects().getByType(RectangleMapObject.class)) {
@@ -88,6 +88,6 @@ public class WorldCreator {
 
             new Turtle(gameWorld, rectangle.getX(), rectangle.getY() + 7);
         }
-        Gdx.app.log("Enemy","Turtles created");
+        Gdx.app.log("enemy","Turtles created");
     }
 }
