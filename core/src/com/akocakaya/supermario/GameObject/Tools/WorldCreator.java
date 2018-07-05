@@ -1,9 +1,11 @@
 package com.akocakaya.supermario.GameObject.Tools;
 
 import com.akocakaya.supermario.GameObject.Enemy.Goomba;
+import com.akocakaya.supermario.GameObject.Enemy.Turtle;
 import com.akocakaya.supermario.GameObject.GameWorld;
 import com.akocakaya.supermario.GameObject.TileObject.Brick;
 import com.akocakaya.supermario.GameObject.TileObject.Coin;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -28,19 +30,25 @@ public class WorldCreator {
 
         //for ground
         builder(2);
+        Gdx.app.log("Tile Object","Ground created");
 
         //for pipes
         builder(3);
+        Gdx.app.log("Tile Object","Pipes created");
 
         //for coins
         for (MapObject object : tiledMap.getLayers().get(4).getObjects().getByType(RectangleMapObject.class)) {
             new Coin(gameWorld, object);
         }
 
+
+        Gdx.app.log("Tile Object","Coins created");
+
         //for bricks
         for (MapObject object : tiledMap.getLayers().get(5).getObjects().getByType(RectangleMapObject.class)) {
             new Brick(gameWorld, object);
         }
+        Gdx.app.log("Tile Object","Bricks created");
 
         //for goombas
         for (MapObject object : tiledMap.getLayers().get(6).getObjects().getByType(RectangleMapObject.class)) {
@@ -48,6 +56,15 @@ public class WorldCreator {
 
             new Goomba(gameWorld, rectangle.getX(), rectangle.getY() + 7);
         }
+        Gdx.app.log("Enemy","Goombas created");
+
+        //for turtles
+        for (MapObject object : tiledMap.getLayers().get(7).getObjects().getByType(RectangleMapObject.class)) {
+            Rectangle rectangle = ((RectangleMapObject) object).getRectangle();
+
+            new Turtle(gameWorld, rectangle.getX(), rectangle.getY() + 7);
+        }
+        Gdx.app.log("Enemy","Turtles created");
     }
 
     private void builder(int index) {
