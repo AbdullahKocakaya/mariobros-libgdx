@@ -27,8 +27,4 @@ public abstract class Enemy extends Sprite {
     protected abstract void defineEnemy();
 
     public abstract void update(float delta);
-
-    public void draw(SpriteBatch spriteBatch) {
-        draw(spriteBatch);
-    }
 }
