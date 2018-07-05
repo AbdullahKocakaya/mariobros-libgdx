@@ -30,11 +30,11 @@ public class WorldCreator {
         this.gameWorld = gameWorld;
 
         //for ground
-        builder(2);
+        tileObjectBuilder(2);
         Gdx.app.log("Tile Object","Ground created");
 
         //for pipes
-        builder(3);
+        tileObjectBuilder(3);
         Gdx.app.log("Tile Object","Pipes created");
 
         //for bricks and coins
@@ -44,7 +44,7 @@ public class WorldCreator {
         enemyBuilder();
     }
 
-    private void builder(int index) {
+    private void tileObjectBuilder(int index) {
         for (MapObject object : tiledMap.getLayers().get(index).getObjects().getByType(RectangleMapObject.class)) {
             Rectangle rectangle = ((RectangleMapObject) object).getRectangle();
 
