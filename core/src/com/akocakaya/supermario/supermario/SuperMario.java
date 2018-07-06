@@ -1,6 +1,6 @@
 package com.akocakaya.supermario.supermario;
 
-import com.akocakaya.supermario.imageLoader.TextureLoader;
+import com.akocakaya.supermario.textureLoader.TextureLoader;
 import com.akocakaya.supermario.states.MenuState;
 import com.akocakaya.supermario.states.StateManager;
 import com.badlogic.gdx.ApplicationAdapter;
