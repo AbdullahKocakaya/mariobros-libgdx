@@ -27,6 +27,7 @@ public class StageState extends State {
     public void render(SpriteBatch spriteBatch) {
         gameWorld.render(spriteBatch);
         gameWorld.getBox2DDebugRenderer().render(gameWorld.getWorld(), camera.combined);
+        gameWorld.getWorld().step(1/60f,6,2);
     }
 
     @Override
@@ -34,7 +35,7 @@ public class StageState extends State {
         camera.update();
         gameWorld.update(delta);
         gameWorld.getRenderer().setView(camera);
-        camera.position.x += 1;
+    //    camera.position.x += 1;
     }
 
     public StateManager getStateManager() {
