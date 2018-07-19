@@ -1,6 +1,7 @@
 package com.akocakaya.supermario.gameObject.enemy;
 
 import com.akocakaya.supermario.gameObject.GameWorld;
+import com.akocakaya.supermario.supermario.SuperMario;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef;
@@ -12,6 +13,7 @@ public class Turtle extends Enemy {
 
     public Turtle(GameWorld gameWorld, float x, float y) {
         super(gameWorld, x, y);
+        setBounds(getX(), getY(), 16 / SuperMario.PPM, 24 / SuperMario.PPM);
     }
 
     @Override
@@ -23,17 +25,17 @@ public class Turtle extends Enemy {
 
         FixtureDef fixtureDef = new FixtureDef();
         CircleShape circleShape = new CircleShape();
-        circleShape.setRadius(6);
+        circleShape.setRadius(6 / SuperMario.PPM);
 
         fixtureDef.shape = circleShape;
         body.createFixture(fixtureDef).setUserData(this);
 
         PolygonShape head = new PolygonShape();
         Vector2[] vertices = new Vector2[4];
-        vertices[0] = new Vector2(-5, 6).scl(1);
-        vertices[1] = new Vector2(5, 6).scl(1);
-        vertices[2] = new Vector2(-3, 5).scl(1);
-        vertices[3] = new Vector2(3, 5).scl(1);
+        vertices[0] = new Vector2(-5, 6).scl(1 / SuperMario.PPM);
+        vertices[1] = new Vector2(5, 6).scl(1 / SuperMario.PPM);
+        vertices[2] = new Vector2(-3, 5).scl(1 / SuperMario.PPM);
+        vertices[3] = new Vector2(3, 5).scl(1 / SuperMario.PPM);
         head.set(vertices);
 
         fixtureDef.shape = head;

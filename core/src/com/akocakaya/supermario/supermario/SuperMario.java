@@ -10,9 +10,10 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class SuperMario extends ApplicationAdapter {
 
-    public static int WIDTH = 1000;
-    public static int HEIGHT = 600;
-    public static String TITLE = "Super Mario Bros";
+    public static final int WIDTH = 1000;
+    public static final int HEIGHT = 600;
+    public static final float PPM = 100;
+    public static final String TITLE = "Super Mario Bros";
 
     private static StateManager stateManager;
 

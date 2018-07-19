@@ -1,6 +1,7 @@
 package com.akocakaya.supermario.gameObject.interactiveTileObject;
 
 import com.akocakaya.supermario.gameObject.GameWorld;
+import com.akocakaya.supermario.supermario.SuperMario;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -30,11 +31,11 @@ public abstract class InteractiveTileObject {
         PolygonShape polygonShape = new PolygonShape();
 
         bodyDef.type = BodyDef.BodyType.StaticBody;
-        bodyDef.position.set((bounds.getX() + bounds.getWidth() / 2), (bounds.getY() + bounds.getHeight() / 2));
+        bodyDef.position.set((bounds.getX() + bounds.getWidth() / 2) / SuperMario.PPM, (bounds.getY() + bounds.getHeight() / 2) / SuperMario.PPM);
 
         body = world.createBody(bodyDef);
 
-        polygonShape.setAsBox(bounds.getWidth() / 2, bounds.getHeight() / 2);
+        polygonShape.setAsBox((bounds.getWidth() / 2) / SuperMario.PPM, (bounds.getHeight() / 2) / SuperMario.PPM);
         fixtureDef.shape = polygonShape;
         fixture = body.createFixture(fixtureDef);
     }

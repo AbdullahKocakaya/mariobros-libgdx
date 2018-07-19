@@ -5,6 +5,7 @@ import com.akocakaya.supermario.gameObject.enemy.Turtle;
 import com.akocakaya.supermario.gameObject.GameWorld;
 import com.akocakaya.supermario.gameObject.interactiveTileObject.Brick;
 import com.akocakaya.supermario.gameObject.interactiveTileObject.Coin;
+import com.akocakaya.supermario.supermario.SuperMario;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
@@ -49,11 +50,11 @@ public class WorldCreator {
             Rectangle rectangle = ((RectangleMapObject) object).getRectangle();
 
             bodyDef.type = BodyDef.BodyType.StaticBody;
-            bodyDef.position.set((rectangle.getX() + rectangle.getWidth() / 2), (rectangle.getY() + rectangle.getHeight() / 2));
+            bodyDef.position.set(((rectangle.getX() + rectangle.getWidth() / 2) / SuperMario.PPM), ((rectangle.getY() + rectangle.getHeight() / 2) / SuperMario.PPM));
 
             Body body = world.createBody(bodyDef);
 
-            polygonShape.setAsBox((rectangle.getWidth() / 2), (rectangle.getHeight() / 2));
+            polygonShape.setAsBox((rectangle.getWidth() / 2) / SuperMario.PPM, (rectangle.getHeight() / 2) / SuperMario.PPM);
             fixtureDef.shape = polygonShape;
             body.createFixture(fixtureDef);
         }
@@ -78,7 +79,7 @@ public class WorldCreator {
         for (MapObject object : tiledMap.getLayers().get(6).getObjects().getByType(RectangleMapObject.class)) {
             Rectangle rectangle = ((RectangleMapObject) object).getRectangle();
 
-            new Goomba(gameWorld, rectangle.getX(), rectangle.getY() + 7);
+            new Goomba(gameWorld, rectangle.getX() / SuperMario.PPM, (rectangle.getY() + 7) / SuperMario.PPM);
         }
         Gdx.app.log("enemy","Goombas created");
 
@@ -86,7 +87,7 @@ public class WorldCreator {
         for (MapObject object : tiledMap.getLayers().get(7).getObjects().getByType(RectangleMapObject.class)) {
             Rectangle rectangle = ((RectangleMapObject) object).getRectangle();
 
-            new Turtle(gameWorld, rectangle.getX(), rectangle.getY() + 7);
+            new Turtle(gameWorld, rectangle.getX() / SuperMario.PPM, (rectangle.getY() + 7) / SuperMario.PPM);
         }
         Gdx.app.log("enemy","Turtles created");
     }

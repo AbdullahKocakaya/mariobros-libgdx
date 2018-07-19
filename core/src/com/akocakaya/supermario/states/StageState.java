@@ -2,6 +2,7 @@ package com.akocakaya.supermario.states;
 
 import com.akocakaya.supermario.gameObject.GameWorld;
 import com.akocakaya.supermario.inputhandler.StageStateInput;
+import com.akocakaya.supermario.supermario.SuperMario;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -15,7 +16,7 @@ public class StageState extends State {
 
         this.stateManager = stateManager;
 
-        camera.zoom = 0.34f;
+        camera.zoom = 0.34f / SuperMario.PPM;
 
         camera.setToOrtho(false);
         Gdx.input.setInputProcessor(new StageStateInput(this));
@@ -35,7 +36,7 @@ public class StageState extends State {
         camera.update();
         gameWorld.update(delta);
         gameWorld.getRenderer().setView(camera);
-    //    camera.position.x += 1;
+      //  camera.position.x += 1 / SuperMario.PPM;
     }
 
     public StateManager getStateManager() {
