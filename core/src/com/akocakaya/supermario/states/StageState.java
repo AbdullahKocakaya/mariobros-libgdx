@@ -19,9 +19,10 @@ public class StageState extends State {
         camera.zoom = 0.34f / SuperMario.PPM;
 
         camera.setToOrtho(false);
-        Gdx.input.setInputProcessor(new StageStateInput(this));
 
         gameWorld = new GameWorld();
+
+        Gdx.input.setInputProcessor(new StageStateInput(this, gameWorld));
     }
 
     @Override
@@ -41,5 +42,9 @@ public class StageState extends State {
 
     public StateManager getStateManager() {
         return stateManager;
+    }
+
+    public GameWorld getGameWorld() {
+        return gameWorld;
     }
 }

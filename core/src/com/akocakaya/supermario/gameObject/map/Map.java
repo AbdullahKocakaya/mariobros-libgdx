@@ -9,18 +9,19 @@ import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 
 public class Map implements GameObject {
 
-    private OrthogonalTiledMapRenderer renderer;
+    private OrthogonalTiledMapRenderer tiledMapRenderer;
     private TiledMap tiledMap;
 
     public Map() {
         TmxMapLoader mapLoader = new TmxMapLoader();
         tiledMap = mapLoader.load("level1.tmx");
-        renderer = new OrthogonalTiledMapRenderer(tiledMap, 1 / SuperMario.PPM);
+
+        tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap, 1 / SuperMario.PPM);
     }
 
     @Override
     public void render(SpriteBatch spriteBatch) {
-        renderer.render();
+        tiledMapRenderer.render();
     }
 
     @Override
@@ -30,11 +31,11 @@ public class Map implements GameObject {
 
     @Override
     public void dispose() {
-        renderer.dispose();
+        tiledMapRenderer.dispose();
     }
 
-    public OrthogonalTiledMapRenderer getRenderer() {
-        return renderer;
+    public OrthogonalTiledMapRenderer getTiledMapRenderer() {
+        return tiledMapRenderer;
     }
 
     public TiledMap getTiledMap() {

@@ -17,16 +17,18 @@ public class GameWorld implements GameObject {
 
     private OrthogonalTiledMapRenderer renderer;
 
+    private Mario mario;
+
     public GameWorld() {
         map = new Map();
-        renderer = map.getRenderer();
+        renderer = map.getTiledMapRenderer();
 
         world = new World(new Vector2(0, -10), true);
         box2DDebugRenderer = new Box2DDebugRenderer();
         WorldCreator worldCreator = new WorldCreator(this);
 
 
-        Mario mario = new Mario(world);
+        mario = new Mario(world);
     }
 
     @Override
@@ -36,6 +38,7 @@ public class GameWorld implements GameObject {
 
     @Override
     public void update(float delta) {
+        mario.move();
         map.update(delta);
                         //gravity
         world.step(1/60f,6,2);
@@ -63,5 +66,9 @@ public class GameWorld implements GameObject {
 
     public Box2DDebugRenderer getBox2DDebugRenderer() {
         return box2DDebugRenderer;
+    }
+
+    public Mario getMario() {
+        return mario;
     }
 }
