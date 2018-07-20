@@ -1,7 +1,7 @@
 package com.akocakaya.supermario.inputhandler;
 
 import com.akocakaya.supermario.gameObject.GameWorld;
-import com.akocakaya.supermario.gameObject.Mario;
+import com.akocakaya.supermario.gameObject.mario.Mario;
 import com.akocakaya.supermario.states.MenuState;
 import com.akocakaya.supermario.states.StageState;
 import com.badlogic.gdx.Input;

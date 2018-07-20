@@ -1,5 +1,6 @@
 package com.akocakaya.supermario.gameObject;
 
+import com.akocakaya.supermario.gameObject.mario.Mario;
 import com.akocakaya.supermario.gameObject.map.Map;
 import com.akocakaya.supermario.gameObject.tools.WorldCreator;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;

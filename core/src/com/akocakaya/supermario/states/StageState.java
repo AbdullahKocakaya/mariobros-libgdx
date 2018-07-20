@@ -5,16 +5,21 @@ import com.akocakaya.supermario.inputhandler.StageStateInput;
 import com.akocakaya.supermario.supermario.SuperMario;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class StageState extends State {
 
     private StateManager stateManager;
     private GameWorld gameWorld;
+    private Viewport viewport;
 
     public StageState(StateManager stateManager) {
         super(stateManager);
 
         this.stateManager = stateManager;
+
+        viewport = new FitViewport((SuperMario.WIDTH) / SuperMario.PPM, (SuperMario.HEIGHT) / SuperMario.PPM, camera);
 
         camera.zoom = 0.34f / SuperMario.PPM;
 
