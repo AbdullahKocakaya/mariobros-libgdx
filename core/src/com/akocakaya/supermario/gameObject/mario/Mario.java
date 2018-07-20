@@ -29,7 +29,14 @@ public class Mario extends Sprite {
         circleShape.setRadius(6 / SuperMario.PPM);
 
         fixtureDef.shape = circleShape;
-        body.createFixture(fixtureDef);
+        body.createFixture(fixtureDef).setUserData(this);
+
+        EdgeShape head = new EdgeShape();
+        head.set(new Vector2(-2 / SuperMario.PPM, 6 / SuperMario.PPM), new Vector2(2 / SuperMario.PPM, 6 / SuperMario.PPM));
+        fixtureDef.shape = head;
+        fixtureDef.isSensor = true;
+
+        body.createFixture(fixtureDef).setUserData(this);
     }
 
     public void move() {
