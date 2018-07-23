@@ -13,17 +13,15 @@ public class Mario extends Sprite {
     private World world;
     private Body body;
 
-    TextureRegion marioStand;
-
     private boolean right = false;
-    boolean left = false;
+    private boolean left = false;
 
     public Mario(World world) {
         this.world = world;
 
         defineMario();
 
-        marioStand = new TextureRegion(TextureLoader.littleMario, 0, 0, 16, 16);
+        TextureRegion marioStand = new TextureRegion(TextureLoader.littleMario, 0, 0, 16, 16);
         setBounds(0, 0, 36, 36);
         setRegion(marioStand);
     }

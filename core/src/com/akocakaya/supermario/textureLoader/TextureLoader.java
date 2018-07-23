@@ -8,8 +8,8 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 public class TextureLoader {
 
     private static Texture stagePointerTexture;
-    public static TextureRegion stagePointerRegion, littleMario;
     private static TextureAtlas marioAndEnemiesTextureAtlas;
+    public static TextureRegion stagePointerRegion, littleMario;
 
     public static void load() {
         stagePointerTexture = new Texture(Gdx.files.internal("stage-pointer.png"));
