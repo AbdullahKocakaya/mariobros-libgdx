@@ -24,7 +24,7 @@ public class GameWorld implements GameObject {
         map = new Map();
         renderer = map.getTiledMapRenderer();
 
-        world = new World(new Vector2(0, -10), true);
+        world = new World(new Vector2(0, -5), true);
         box2DDebugRenderer = new Box2DDebugRenderer();
         WorldCreator worldCreator = new WorldCreator(this);
 
@@ -46,7 +46,7 @@ public class GameWorld implements GameObject {
         mario.move();
         map.update(delta);
                         //gravity
-        world.step(1/60f,6,2);
+        world.step(1/60f,1,1);
     }
 
     @Override

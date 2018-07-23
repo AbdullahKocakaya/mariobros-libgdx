@@ -29,11 +29,17 @@ public class Mario extends Sprite {
     private void defineMario() {
         BodyDef bodyDef = new BodyDef();
         bodyDef.position.set(32 / SuperMario.PPM, 32 / SuperMario.PPM);
+
+        //Dynamic bodies are objects which move around and are affected by forces and other dynamic,
+        //kinematic and static objects. Dynamic bodies are suitable for any object which needs to move and be affected by forces
         bodyDef.type = BodyDef.BodyType.DynamicBody;
         body = world.createBody(bodyDef);
 
         FixtureDef fixtureDef = new FixtureDef();
         CircleShape circleShape = new CircleShape();
+
+        //to handle smoothness
+        fixtureDef.friction = 0.4f;
         circleShape.setRadius(6 / SuperMario.PPM);
 
         fixtureDef.shape = circleShape;
@@ -53,9 +59,9 @@ public class Mario extends Sprite {
 
     public void move() {
         if (right)
-            body.applyLinearImpulse(new Vector2(0.1f, 0), body.getWorldCenter(), true);
+            body.applyLinearImpulse(new Vector2(0.07f, 0), body.getWorldCenter(), true);
         if (left)
-            body.applyLinearImpulse(new Vector2(-0.1f, 0), body.getWorldCenter(), true);
+            body.applyLinearImpulse(new Vector2(-0.07f, 0), body.getWorldCenter(), true);
     }
 
     public void setRight(boolean right) {

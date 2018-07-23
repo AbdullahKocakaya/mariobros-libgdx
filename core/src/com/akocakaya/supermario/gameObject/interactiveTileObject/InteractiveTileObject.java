@@ -30,6 +30,7 @@ public abstract class InteractiveTileObject {
         FixtureDef fixtureDef = new FixtureDef();
         PolygonShape polygonShape = new PolygonShape();
 
+        //Static bodies are objects which do not move and are not affected by forces
         bodyDef.type = BodyDef.BodyType.StaticBody;
         bodyDef.position.set((bounds.getX() + bounds.getWidth() / 2) / SuperMario.PPM, (bounds.getY() + bounds.getHeight() / 2) / SuperMario.PPM);
 

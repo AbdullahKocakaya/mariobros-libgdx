@@ -29,7 +29,7 @@ public class StageStateInput implements InputProcessor {
             stageState.getStateManager().pushState(new MenuState(stageState.getStateManager()));
 
         if (Input.Keys.W == keycode)
-            body.applyLinearImpulse(new Vector2(0, 4f), body.getWorldCenter(), true);
+            body.applyLinearImpulse(new Vector2(0, 2.8f), body.getWorldCenter(), true);
         if (Input.Keys.D == keycode)
             moving.setRight(true);
         if (Input.Keys.A == keycode)

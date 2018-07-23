@@ -20,6 +20,9 @@ public class Turtle extends Enemy {
     protected void defineEnemy() {
         BodyDef bodyDef = new BodyDef();
         bodyDef.position.set(getX(), getY());
+
+        //Dynamic bodies are objects which move around and are affected by forces and other dynamic,
+        //kinematic and static objects. Dynamic bodies are suitable for any object which needs to move and be affected by forces
         bodyDef.type = BodyDef.BodyType.DynamicBody;
         body = world.createBody(bodyDef);
 

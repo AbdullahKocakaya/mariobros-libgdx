@@ -49,6 +49,7 @@ public class WorldCreator {
         for (MapObject object : tiledMap.getLayers().get(index).getObjects().getByType(RectangleMapObject.class)) {
             Rectangle rectangle = ((RectangleMapObject) object).getRectangle();
 
+            //Static bodies are objects which do not move and are not affected by forces
             bodyDef.type = BodyDef.BodyType.StaticBody;
             bodyDef.position.set(((rectangle.getX() + rectangle.getWidth() / 2) / SuperMario.PPM), ((rectangle.getY() + rectangle.getHeight() / 2) / SuperMario.PPM));
 
