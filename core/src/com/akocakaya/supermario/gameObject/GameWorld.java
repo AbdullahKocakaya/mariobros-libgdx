@@ -35,6 +35,10 @@ public class GameWorld implements GameObject {
     @Override
     public void render(SpriteBatch spriteBatch) {
         map.render(spriteBatch);
+        mario.render(spriteBatch);
+        spriteBatch.begin();
+        mario.draw(spriteBatch);
+        spriteBatch.end();
     }
 
     @Override

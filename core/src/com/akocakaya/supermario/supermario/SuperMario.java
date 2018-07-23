@@ -13,7 +13,7 @@ public class SuperMario extends ApplicationAdapter {
     public static final int WIDTH = 1000;
     public static final int HEIGHT = 600;
     public static final float PPM = 100;
-    public static final String TITLE = "Super mario Bros";
+    public static final String TITLE = "Super Mario Bros";
 
     private static StateManager stateManager;
 

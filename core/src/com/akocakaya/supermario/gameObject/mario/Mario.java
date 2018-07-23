@@ -1,7 +1,10 @@
 package com.akocakaya.supermario.gameObject.mario;
 
 import com.akocakaya.supermario.supermario.SuperMario;
+import com.akocakaya.supermario.textureLoader.TextureLoader;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 
@@ -10,12 +13,19 @@ public class Mario extends Sprite {
     private World world;
     private Body body;
 
-    private boolean right = false; boolean left = false;
+    TextureRegion marioStand;
+
+    private boolean right = false;
+    boolean left = false;
 
     public Mario(World world) {
         this.world = world;
 
         defineMario();
+
+        marioStand = new TextureRegion(TextureLoader.littleMario, 0, 0, 16, 16);
+        setBounds(0, 0, 36, 36);
+        setRegion(marioStand);
     }
 
     private void defineMario() {
@@ -37,6 +47,10 @@ public class Mario extends Sprite {
         fixtureDef.isSensor = true;
 
         body.createFixture(fixtureDef).setUserData(this);
+    }
+
+    public void render(SpriteBatch spriteBatch) {
+        setPosition((body.getPosition().x - getWidth() / 2), (body.getPosition().y - getHeight() / 2));
     }
 
     public void move() {
