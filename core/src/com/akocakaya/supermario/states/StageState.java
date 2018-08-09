@@ -42,7 +42,10 @@ public class StageState extends State {
         camera.update();
         gameWorld.update(delta);
         gameWorld.getRenderer().setView(camera);
-      //  camera.position.x += 1 / SuperMario.PPM;
+        camera.position.x = 1.7f;
+        if (gameWorld.getMario().getBody().getPosition().x > 1.75f) {
+            camera.position.x = gameWorld.getMario().getBody().getPosition().x;
+        }
     }
 
     public StateManager getStateManager() {

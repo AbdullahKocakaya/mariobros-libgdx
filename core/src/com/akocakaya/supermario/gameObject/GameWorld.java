@@ -3,6 +3,7 @@ package com.akocakaya.supermario.gameObject;
 import com.akocakaya.supermario.gameObject.mario.Mario;
 import com.akocakaya.supermario.gameObject.map.Map;
 import com.akocakaya.supermario.gameObject.tools.WorldCreator;
+import com.akocakaya.supermario.textureLoader.TextureLoader;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Vector2;
@@ -36,9 +37,6 @@ public class GameWorld implements GameObject {
     public void render(SpriteBatch spriteBatch) {
         map.render(spriteBatch);
         mario.render(spriteBatch);
-        spriteBatch.begin();
-        mario.draw(spriteBatch);
-        spriteBatch.end();
     }
 
     @Override

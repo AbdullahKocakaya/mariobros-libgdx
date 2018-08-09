@@ -46,15 +46,21 @@ public class Mario extends Sprite {
         body.createFixture(fixtureDef).setUserData(this);
 
         EdgeShape head = new EdgeShape();
-        head.set(new Vector2(-2 / SuperMario.PPM, 6 / SuperMario.PPM), new Vector2(2 / SuperMario.PPM, 6 / SuperMario.PPM));
+        head.set(new Vector2(-2 / SuperMario.PPM, 6 / SuperMario.PPM),
+                new Vector2(2 / SuperMario.PPM, 6 / SuperMario.PPM));
         fixtureDef.shape = head;
         fixtureDef.isSensor = true;
 
         body.createFixture(fixtureDef).setUserData(this);
+        System.out.println("definition position " + (body.getPosition().x) + " " + (body.getPosition().y));
     }
 
     public void render(SpriteBatch spriteBatch) {
-        setPosition((body.getPosition().x - getWidth() / 2), (body.getPosition().y - getHeight() / 2));
+        //setPosition((body.getPosition().x - getWidth() / 2), (body.getPosition().y - getHeight() / 2));
+        setPosition((body.getPosition().x + 500), (body.getPosition().y - 0.06f) * 294);
+        spriteBatch.begin();
+        this.draw(spriteBatch);
+        spriteBatch.end();
     }
 
     public void move() {
